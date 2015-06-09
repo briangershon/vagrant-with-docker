@@ -9,8 +9,13 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision :docker do |d|
-    d.pull_images "ubuntu"
+    # d.pull_images "ubuntu"
   end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+  SHELL
 
   config.ssh.forward_agent = true
 end

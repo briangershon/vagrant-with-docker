@@ -6,11 +6,11 @@ A `Vagrantfile` tailored for creating and running Docker containers.
 Features
 --------
 
+* Installs latest Docker and Docker Compose
+
+* SSH agent forwarding
+
 * Ubuntu 14.04 LTS
-
-* Sets up latest Docker (via Docker provisioner)
-
-* SSH Forwarding enabled
 
 Getting Started
 ---------------
